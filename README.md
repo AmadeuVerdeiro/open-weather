@@ -3,4 +3,4 @@ For demonstration skills in REST, frontend and backend, I choose this API when, 
 
 # Diagram
 
-<img src="/open-weather/Diagram Open weather.jpg" alt="Diagram Open weather"/>
+<img src="https://github.com/AmadeuVerdeiro/open-weather/blob/main/Diagram%20Open%20weather.jpg)https://github.com/AmadeuVerdeiro/open-weather/blob/main/Diagram%20Open%20weather.jpg" alt="Diagram Open weather"/>
