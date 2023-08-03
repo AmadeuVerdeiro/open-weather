@@ -17,7 +17,7 @@ function App() {
   let latIn = 0;
   let lonIn = 0;
 
-  const { list, city, country, details, lon, lat } = weatherStore;
+  const { details } = weatherStore;
 
   async function getCityLatLon(city: string, country: string): Promise<any> {
     try {
@@ -112,13 +112,7 @@ function App() {
         >
           Check weather
         </Button>
-
-        <br></br>
-        {city}
-        <br />
-        {country}
       </div>
-
       <div>
         <h1> {details?.main.temp}</h1>
         <h1> {details.weather[0].main}</h1>
