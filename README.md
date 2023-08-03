@@ -1,6 +1,11 @@
-# open-weather
+# Open-weather
 For demonstration skills in REST, frontend and backend, I choose this API when, with a request route, it returns a JSON with all the data about the city we chose in the input field on the app.
 
 # Diagram
+<img src="Diagram Open weather.jpg" alt="Diagram Open weather"/>
 
-<img src="[https://github.com/AmadeuVerdeiro/open-weather/blob/main/Diagram%20Open%20weather.jpg)https://github.com/AmadeuVerdeiro/open-weather/blob/main/Diagram%20Open%20weather.jpg](https://github.com/AmadeuVerdeiro/open-weather/blob/main/Diagram%20Open%20weather.jpg?raw=true)https://github.com/AmadeuVerdeiro/open-weather/blob/main/Diagram%20Open%20weather.jpg?raw=true" alt="Diagram Open weather"/>
+# Autor
+Amadeu Verdeiro<br>
+<a href="https://www.linkedin.com/in/amadeuverdeiro">
+<img src="https://api.iconify.design/logos:linkedin.svg"/>
+</a>
