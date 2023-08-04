@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "./store/store";
 import { setWeatherDetails } from "./reducer/weather.store";
 import { Button, TextField } from "@mui/material";
+import { ConversorKelvin } from "./assets/components/data-manage";
 
 function App() {
   const dispatch = useDispatch();
@@ -12,12 +13,13 @@ function App() {
     (state: RootState) => state.rootReducer.weather_store
   );
 
+  const { details } = weatherStore;
+
   const [cityIn, setCintyIn] = useState("");
   const [countryIn, setCountryIn] = useState("");
   let latIn = 0;
   let lonIn = 0;
-
-  const { details } = weatherStore;
+  let image = "";
 
   async function getCityLatLon(city: string, country: string): Promise<any> {
     try {
@@ -49,11 +51,13 @@ function App() {
       }
       await res.json().then((data) => {
         dispatch(setWeatherDetails(data));
+        image = data.weather[0].icon;
       });
     } catch (error) {
       console.error(`Error on loading data: ${error}`);
       throw error;
     } finally {
+      imageWheather();
     }
   }
 
@@ -70,22 +74,31 @@ function App() {
     setCountryIn("");
     setCintyIn("");
   }
-
+  function imageWheather() {
+    const urlImage = `https://openweathermap.org/img/wn/${image}@2x.png`;
+    const elementImage = document.getElementById("image");
+    if (elementImage instanceof HTMLImageElement) {
+      elementImage.src = urlImage;
+    }
+  }
   return (
     <>
+    <div>
+
+    </div>
       <div
         style={{
-          display: "grid",
+          display:"grid",
           backgroundColor: "#ffff",
-          maxWidth: "400px",
+          width: "400px",
           justifyItems: "center",
           padding: "1rem",
           borderRadius: "10px",
-          boxShadow: "-moz-initial",
+          marginTop:"1rem",
         }}
       >
         <TextField
-          style={{ padding: "1rem" }}
+          style={{ padding: "1rem", width:"300px", marginBottom:"1rem" }}
           id="cityInValue"
           label="City"
           variant="standard"
@@ -93,7 +106,7 @@ function App() {
           onChange={handleSetCity}
         />
         <TextField
-          style={{ padding: "1rem" }}
+          style={{ padding: "1rem",  width:"300px",marginBottom:"1rem" }}
           id="countryInValue"
           label="Country"
           variant="standard"
@@ -103,8 +116,9 @@ function App() {
         <Button
           style={{
             padding: "1rem",
-            maxWidth: "10rem",
+            maxWidth: "100%",
             justifyContent: "center",
+            justifyItems:"center"
           }}
           variant="contained"
           color="success"
@@ -113,12 +127,26 @@ function App() {
           Check weather
         </Button>
       </div>
-      <div>
-        <h1> {details?.main.temp}</h1>
-        <h1> {details.weather[0].main}</h1>
-        <h1> {details.main.temp}</h1>
-        <h1> {details.clouds.all} </h1>
-      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          justifyItems: "center",
+          width: "400px",
+          backgroundColor: "#ffff",
+          padding: "1rem",
+          marginTop:"1rem",
+          borderRadius: "10px",
+
+        }}
+      >
+        <h1>
+          {ConversorKelvin(
+            details ? (details.main ? details.main.temp : 273) : 273
+          )}
+        </h1>
+          <img id="image" src="https://openweathermap.org/img/wn/02d@2x.png" />
+        </div>
     </>
   );
 }
