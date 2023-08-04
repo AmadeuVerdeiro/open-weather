@@ -112,6 +112,7 @@ function App() {
         }}
       >
         <TextField
+          placeholder="London"
           style={{ padding: "1rem", maxWidth: "300px", marginBottom: "1rem" }}
           id="cityInValue"
           label="City"
@@ -120,6 +121,7 @@ function App() {
           onChange={handleSetCity}
         />
         <TextField
+          placeholder="UK"
           style={{ padding: "1rem", maxWidth: "300px", marginBottom: "1rem" }}
           id="countryInValue"
           label="Country"
