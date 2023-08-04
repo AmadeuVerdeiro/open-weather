@@ -117,6 +117,7 @@ function App() {
           id="cityInValue"
           label="City"
           variant="standard"
+          defaultValue={'London'}
           value={cityIn}
           onChange={handleSetCity}
         />
@@ -125,6 +126,7 @@ function App() {
           style={{ padding: "1rem", maxWidth: "300px", marginBottom: "1rem" }}
           id="countryInValue"
           label="Country"
+          defaultValue={'UK'}
           variant="standard"
           value={countryIn}
           onChange={handleSetCountry}
