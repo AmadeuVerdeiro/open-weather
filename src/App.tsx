@@ -24,7 +24,7 @@ function App() {
   async function getCityLatLon(city: string, country: string): Promise<any> {
     try {
       const res = await fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${city},${country}&limit=5&appid=0ddd08bdbcb58d9e02db1d8ef58d9056`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${city},${country}&limit=5&appid=0ddd08bdbcb58d9e02db1d8ef58d9056`
       );
       if (!res.ok) {
         throw new Error(`Error on request: ${res.status}`);
@@ -158,6 +158,7 @@ function App() {
           {ConversorKelvin(
             details ? (details.main ? details.main.temp : 273) : 273
           )}
+           details ? (details.main ? details.main.temp : 273) : 273
         </h1>
         <img id="image" src="https://openweathermap.org/img/wn/02d@2x.png" />
       </div>
