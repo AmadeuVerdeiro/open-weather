@@ -1,3 +1,6 @@
-body{
+body {
+  background-image: url("../src/assets/imgs/weather-api-background.jpg");
+  background-position: center;
+  background-size: auto;
   background-color: #b5bfdc;
 }

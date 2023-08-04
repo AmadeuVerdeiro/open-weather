@@ -1,18 +1,23 @@
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'IBM Plex Mono', monospace;
     display:grid;
     justify-content: center;
     justify-items: center;
 }
-/* Estilizando a tag img */
+
 img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: rgb(153, 153, 153);
+  background-color:  rgb(139, 165, 196);
   margin-top: .5rem;
   }
-h1{
+
+  h1{
     justify-items: center;
-    padding: 1rem;
+   padding: 1rem;
+}
+
+.content{
+  box-shadow: 5px 5px 10px rgba(75, 82, 96, 0.3);
 }

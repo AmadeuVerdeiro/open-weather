@@ -83,22 +83,36 @@ function App() {
   }
   return (
     <>
-    <div>
-
-    </div>
       <div
+        
         style={{
-          display:"grid",
+          marginTop: "20%",
+        }}
+      >
+        <h1
+          style={{
+            color: "#ffff",
+            fontWeight: "bolder",
+          }}
+        >
+          Open weather APP
+        </h1>
+        <h4></h4>
+      </div>
+      <div
+      className="content"
+        style={{
+          display: "grid",
           backgroundColor: "#ffff",
-          width: "400px",
+          maxWidth: "400px",
           justifyItems: "center",
           padding: "1rem",
           borderRadius: "10px",
-          marginTop:"1rem",
+          marginTop: "10%",
         }}
       >
         <TextField
-          style={{ padding: "1rem", width:"300px", marginBottom:"1rem" }}
+          style={{ padding: "1rem", maxWidth: "300px", marginBottom: "1rem" }}
           id="cityInValue"
           label="City"
           variant="standard"
@@ -106,7 +120,7 @@ function App() {
           onChange={handleSetCity}
         />
         <TextField
-          style={{ padding: "1rem",  width:"300px",marginBottom:"1rem" }}
+          style={{ padding: "1rem", maxWidth: "300px", marginBottom: "1rem" }}
           id="countryInValue"
           label="Country"
           variant="standard"
@@ -118,7 +132,7 @@ function App() {
             padding: "1rem",
             maxWidth: "100%",
             justifyContent: "center",
-            justifyItems:"center"
+            justifyItems: "center",
           }}
           variant="contained"
           color="success"
@@ -128,16 +142,16 @@ function App() {
         </Button>
       </div>
       <div
+        className="content"
         style={{
           display: "flex",
           justifyContent: "space-between",
           justifyItems: "center",
-          width: "400px",
+          maxWidth: "400px",
           backgroundColor: "#ffff",
           padding: "1rem",
-          marginTop:"1rem",
+          marginTop: "1rem",
           borderRadius: "10px",
-
         }}
       >
         <h1>
@@ -145,8 +159,8 @@ function App() {
             details ? (details.main ? details.main.temp : 273) : 273
           )}
         </h1>
-          <img id="image" src="https://openweathermap.org/img/wn/02d@2x.png" />
-        </div>
+        <img id="image" src="https://openweathermap.org/img/wn/02d@2x.png" />
+      </div>
     </>
   );
 }
